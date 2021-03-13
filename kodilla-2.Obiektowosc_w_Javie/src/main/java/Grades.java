@@ -17,18 +17,19 @@ public class Grades {
         this.size++;
     }
 
-    public void lastGrade() {
-        System.out.println(this.grades[this.size - 1]);
+    public int lastGrade() {
+        int checkLastGrade = (this.grades[this.size - 1]);
+        return checkLastGrade;
     }
 
-    public void average() {
+    public double average() {
         double score = 0.00;
         for (int i = 0; i <= this.size; i++) {
             score = this.grades[i] + score;
         }
         score = score / this.size;
         score = Math.round(score * 100) / 100.0d;
-        System.out.println(score);
+        return score;
     }
 
     public void addGrades() {
@@ -47,8 +48,8 @@ public class Grades {
         System.out.println("Check your grades");
         System.out.println("Ilość ocen w dzienniku to:" + notes.size);
         System.out.println("========Last_Grade========");
-        notes.lastGrade();
+        System.out.println(notes.lastGrade());
         System.out.println("==========Average=========");
-        notes.average();
+        System.out.println(notes.average());
     }
 }
