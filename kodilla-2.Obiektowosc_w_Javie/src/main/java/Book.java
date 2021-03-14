@@ -3,12 +3,17 @@ public class Book {
     private String author;
     private String title;
 
+    public Book(String author, String title) {
+        this.author = author;
+        this.title = title;
+    }
+
     public static Book of(String author, String title) {
-        System.out.println("Autorem książki: " + title + " jest " + author);
-        return null;
+        return new Book(author, title);
     }
 
     public static void main(String[] args) {
-        Book book = Book.of("AUTOR", "TYTUL");
+        Book book = Book.of("Autor", "Tytul");
+        System.out.println(book.author + " " + book.title);
     }
 }
