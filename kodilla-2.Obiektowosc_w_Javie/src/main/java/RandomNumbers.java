@@ -1,6 +1,8 @@
 import java.util.Random;
 
 public class RandomNumbers {
+    int min = 30;
+    int max = 0;
 
     public int random() {
         Random los = new Random();
@@ -9,33 +11,42 @@ public class RandomNumbers {
         return number;
     }
 
+    public int min(int a) {
+        if (a < min) {
+            min = a;
+        }
+        return min;
+    }
+
+    public int max(int a) {
+        if (a > max) {
+            max = a;
+        }
+        return max;
+    }
+
     public void req() {
         int pula = 0;
         int a;
-        int min = 30;
-        int max = 0;
+        int numberMax = 0;
+        int numberMin = 0;
 
         while (pula < 5000) {
             a = this.random();
+            numberMin = this.min(a);
+            numberMax = this.max(a);
 
-            if (min > a) {
-                min = a;
-            } else if (max < a) {
-                max = a;
-            }
             pula = pula + a;
-            System.out.println(pula + " do poprzedniej wartosći dodano: " + a);
+            System.out.println("Do puli: " + (pula - a) + " dodano losową liczbę: " + a + " obecny wynik to: " + pula);
         }
         System.out.println("========================MAX-MIN===========================");
-        System.out.println("Najmniejsza liczba z wylosowwanych to: " + min);
-        System.out.println("Największa liczba z wylosowanych to: " + max);
+        System.out.println("Najmniejsza liczba z wylosowwanych to: " + numberMin);
+        System.out.println("Największa liczba z wylosowanych to: " + numberMax);
     }
-
 
     public static void main(String[] args) {
         RandomNumbers suma = new RandomNumbers();
         suma.req();
-
     }
 }
 
