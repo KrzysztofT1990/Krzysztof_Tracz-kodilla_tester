@@ -3,10 +3,10 @@ package com.kodilla.abstracts.homework;
 public class Person {
     String firstName;
     int age;
-    String job;
+    Job job;
 
 
-    public Person(String firstName, int age, String job){
+    public Person(String firstName, int age, Job job){
         this.firstName=firstName;
         this.age = age;
         this.job = job;
