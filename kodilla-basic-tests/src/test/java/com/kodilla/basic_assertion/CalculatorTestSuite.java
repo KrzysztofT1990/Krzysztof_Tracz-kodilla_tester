@@ -27,20 +27,28 @@ public class CalculatorTestSuite {
     }
 
     @Test
-    public void testSquared() {
+    public void testSquaredLessThanZero() {
         Calculator calculator = new Calculator();
-        int[] tab = {-3, 0, 5};
-
-        for (int j : tab) {
-            int squaredResult = calculator.squared(j);
-
-            if (j < 0) {
-                assertEquals(9, squaredResult);
-            } else if (j == 0) {
-                assertEquals(0, squaredResult);
-            } else {
-                assertEquals(25, squaredResult);
-            }
-        }
+        int a = -3;
+        int squaredResult = calculator.squared(a);
+        assertEquals(9, squaredResult);
     }
+
+    @Test
+    public void testSquaredEqualToZero() {
+        Calculator calculator = new Calculator();
+        int a = 0;
+        int squaredResult = calculator.squared(a);
+        assertEquals(0, squaredResult);
+    }
+
+    @Test
+    public void testSquaredGreaterThanZero() {
+        Calculator calculator = new Calculator();
+        int a = 5;
+        int squaredResult = calculator.squared(a);
+        assertEquals(25, squaredResult);
+    }
+
+
 }
