@@ -11,4 +11,9 @@ public class Person {
         this.age = age;
         this.job = job;
     }
+
+    public void process2(Job job) {
+        System.out.println("Obowiązkami osoby na tym stanowwisku to: " + job.getResponsibilities());
+    }
+
 }
