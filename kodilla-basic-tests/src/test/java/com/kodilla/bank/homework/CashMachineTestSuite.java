@@ -10,8 +10,7 @@ public class CashMachineTestSuite {
 
     @Test
     public void shouldHaveZeroTransaction() {
-        int[] values = cashMachine.getValues();
-        assertEquals(0, values.length);
+        assertEquals(0, cashMachine.howManyTransaction());
     }
 
     @Test
@@ -19,10 +18,7 @@ public class CashMachineTestSuite {
         cashMachine.paymentIn(500);
         cashMachine.paymentIn(1250);
 
-        int[] values = cashMachine.getValues();
-        assertEquals(2, values.length);
-        assertEquals(500, values[0]);
-        assertEquals(1250, values[1]);
+        assertEquals(2, cashMachine.howManyTransaction());
     }
 
     @Test
@@ -30,10 +26,7 @@ public class CashMachineTestSuite {
         cashMachine.paymentOut(300);
         cashMachine.paymentOut(250);
 
-        int[] values = cashMachine.getValues();
-        assertEquals(2, values.length);
-        assertEquals(-300, values[0]);
-        assertEquals(-250, values[1]);
+        assertEquals(2, cashMachine.howManyTransaction());
     }
 
     @Test
