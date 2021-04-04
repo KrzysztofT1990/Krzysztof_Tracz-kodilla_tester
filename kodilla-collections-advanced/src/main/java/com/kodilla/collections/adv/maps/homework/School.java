@@ -1,14 +1,15 @@
 package com.kodilla.collections.adv.maps.homework;
 
-import javax.lang.model.element.Name;
 import java.util.ArrayList;
 import java.util.List;
 
 public class School {
 
     private List<Integer> pupils = new ArrayList<>();
+    private String schoolName;
 
-    public School(int... klasy) {
+    public School(String schoolName, int... klasy) {
+        this.schoolName = schoolName;
         for (int uczniowie : klasy)
             this.pupils.add(uczniowie);
     }
@@ -22,6 +23,6 @@ public class School {
 
     @Override
     public String toString() {
-        return "School Name: " + "!!tu ma być nazwa!! ";
+        return "School Name: " + this.schoolName;
     }
 }
