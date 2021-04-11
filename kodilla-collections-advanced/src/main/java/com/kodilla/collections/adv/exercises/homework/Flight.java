@@ -40,4 +40,5 @@ public class Flight {
     public int hashCode() {
         return Objects.hash(departure, arrival);
     }
+
 }
