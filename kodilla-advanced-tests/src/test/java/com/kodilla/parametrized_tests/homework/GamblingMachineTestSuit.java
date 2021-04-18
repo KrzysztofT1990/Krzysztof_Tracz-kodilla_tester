@@ -42,4 +42,39 @@ class GamblingMachineTestSuit {
         assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(test));
     }
 
+    @ParameterizedTest
+    @CsvFileSource(resources = "/invalidSetOfNumbersBecauseToLong.csv", numLinesToSkip = 1)
+    public void shouldThrowExceptionWithThisSetNumber(int num1, int num2, int num3, int num4, int num5, int num6, int num7) {
+        //give
+        Set<Integer> test = new HashSet<>();
+        test.add(num1);
+        test.add(num2);
+        test.add(num3);
+        test.add(num4);
+        test.add(num5);
+        test.add(num6);
+        test.add(num7);
+        //when
+        //than
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(test));
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/corectSetOfNumbers.csv", numLinesToSkip = 1)
+    public void shouldDontThrowExceptionWithThisSetNumber(int num1, int num2, int num3, int num4, int num5, int num6){
+        //give
+        Set<Integer> test = new HashSet<>();
+        test.add(num1);
+        test.add(num2);
+        test.add(num3);
+        test.add(num4);
+        test.add(num5);
+        test.add(num6);
+        //when
+        //than
+        assertDoesNotThrow(() -> gamblingMachine.howManyWins(test));
+    }
+
+
+
 }
