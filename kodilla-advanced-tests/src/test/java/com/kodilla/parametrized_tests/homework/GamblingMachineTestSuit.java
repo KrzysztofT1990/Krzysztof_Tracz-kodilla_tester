@@ -75,6 +75,4 @@ class GamblingMachineTestSuit {
         assertDoesNotThrow(() -> gamblingMachine.howManyWins(test));
     }
 
-
-
 }
