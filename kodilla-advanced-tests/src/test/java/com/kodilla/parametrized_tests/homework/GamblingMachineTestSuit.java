@@ -73,7 +73,7 @@ class GamblingMachineTestSuit {
         //when
         int expected = gamblingMachine.howManyWins(test);
         //than
-        assertTrue (expected >=0 && expected <= 6);
+        assertTrue(expected >= 0 && expected <= 6);
     }
 
 }
