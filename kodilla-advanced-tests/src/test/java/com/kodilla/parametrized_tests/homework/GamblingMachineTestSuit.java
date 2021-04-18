@@ -61,7 +61,7 @@ class GamblingMachineTestSuit {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/corectSetOfNumbers.csv", numLinesToSkip = 1)
-    public void shouldDontThrowExceptionWithThisSetNumber(int num1, int num2, int num3, int num4, int num5, int num6){
+    public void shouldDontThrowExceptionWithThisSetNumber(int num1, int num2, int num3, int num4, int num5, int num6) throws InvalidNumbersException {
         //give
         Set<Integer> test = new HashSet<>();
         test.add(num1);
@@ -71,8 +71,9 @@ class GamblingMachineTestSuit {
         test.add(num5);
         test.add(num6);
         //when
+        int expected = gamblingMachine.howManyWins(test);
         //than
-        assertDoesNotThrow(() -> gamblingMachine.howManyWins(test));
+        assertTrue (expected >=0 && expected <= 6);
     }
 
 }
