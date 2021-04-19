@@ -25,7 +25,7 @@ public class Shop {
     public List<Order> getOrdersFromValueRange(double minValue, double maxValue) {
         List<Order> orderValueRange = new ArrayList<>();
         for (Order order : orders) {
-            if (minValue < order.getOrderValue() && maxValue > order.getOrderValue()) {
+            if (order.getOrderValue() > minValue && order.getOrderValue() < maxValue) {
                 orderValueRange.add(order);
             }
         }
