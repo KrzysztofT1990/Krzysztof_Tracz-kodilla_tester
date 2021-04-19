@@ -64,3 +64,4 @@ class ShopTestSuit {
         assertEquals(614.78,sumAllValue);
     }
 }
+ 
