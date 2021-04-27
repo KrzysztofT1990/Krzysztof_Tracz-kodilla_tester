@@ -89,3 +89,4 @@ class NotificationWeatherServiceTestSuit {
         Mockito.verify(client1, Mockito.times(1)).receive(notification);
     }
 }
+ 
