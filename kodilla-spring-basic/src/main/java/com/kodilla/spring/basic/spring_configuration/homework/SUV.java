@@ -21,4 +21,3 @@ public class SUV implements Car {
     }
 
 }
- 

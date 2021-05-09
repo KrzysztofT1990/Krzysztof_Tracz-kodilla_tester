@@ -30,7 +30,6 @@ class CarFactoryTestSuite {
         //When
 
 
-
     }
 
     @Test
