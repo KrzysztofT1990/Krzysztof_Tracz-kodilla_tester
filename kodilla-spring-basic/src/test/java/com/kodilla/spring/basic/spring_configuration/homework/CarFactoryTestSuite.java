@@ -1,14 +1,17 @@
 package com.kodilla.spring.basic.spring_configuration.homework;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.time.LocalTime;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@ExtendWith(MockitoExtension.class)
 @SpringBootTest
 class CarFactoryTestSuite {
 
@@ -18,13 +21,15 @@ class CarFactoryTestSuite {
     ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
     Car car = (Car) context.getBean("carForSeason");
 
+    @InjectMocks
+    private Time time;
+
+
     @Test
-    public void carSUVTest() {
+    public void carSUVTest(@Mock LocalTime time) {
         //When
-        Car suv = new CarFactory().carForSeason("lato");
-        assertEquals("SUV", suv.getCarType());
-        assertTrue(suv.hasHeadlightsTurnedOn(lightsON));
-        assertFalse(suv.hasHeadlightsTurnedOn(lightsOFF));
+
+
 
     }
 
