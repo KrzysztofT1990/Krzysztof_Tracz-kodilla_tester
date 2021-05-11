@@ -12,17 +12,19 @@ public class CarFactory {
     @Autowired
     private Time time;
 
+
     @Bean
     public Car carForSeason() {
         Car car = null;
         LocalDate date = time.getLocalDate();
 
         if (date.getDayOfYear() >= 172 && date.getDayOfYear() <= 266) {
-            car = new Cabrio();
+            car = new Cabrio(time.getLocalTime());
+
         } else if (date.getDayOfYear() >= 343 || date.getDayOfYear() <= 80) {
-            car = new SUV();
+            car = new SUV(time.getLocalTime());
         } else {
-            car = new Sedan();
+            car = new Sedan(time.getLocalTime());
         }
         return car;
     }
