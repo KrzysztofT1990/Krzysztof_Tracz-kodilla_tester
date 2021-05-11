@@ -51,9 +51,9 @@ public class BookControllerMvcTest {
         Gson gson = new Gson();
         String json = gson.toJson(new BookDto("Tytuł-2", "Autor-2"));
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/books")
-                .content(json)
-                .accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(MockMvcRequestBuilders.post("/books")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(json))
                 .andExpect(status().is(200));
     }
 
