@@ -23,23 +23,19 @@ public class TaskListRepositoryTestSuite {
     public void testFindByListName() {
         List<TaskList> readTasksList = null;
 
-        try {
-            //Given
-            TaskList taskList = new TaskList(listName, description);
-            taskListRepository.save(taskList);
-            listName = taskList.getListName();
+        //Given
+        TaskList taskList = new TaskList(listName, description);
+        taskListRepository.save(taskList);
+        listName = taskList.getListName();
 
-            //When
-            readTasksList = taskListRepository.findByListName(listName);
+        //When
+        readTasksList = taskListRepository.findByListName(listName);
 
-            //Then
-            Assert.assertEquals(1, readTasksList.size());
+        //Then
+        Assert.assertEquals(1, readTasksList.size());
 
-        } finally {
-
-            //CleanUp
-            int id = readTasksList.get(0).getId();
-            taskListRepository.deleteById(id);
-        }
+        //CleanUp
+        int id = readTasksList.get(0).getId();
+        taskListRepository.deleteById(id);
     }
 }
